@@ -47,13 +47,15 @@ submitButton.addEventListener('click', function (event) {
 
     const name = document.querySelector('#name').value;
     const email = document.querySelector('#email').value;
-    const message = document.querySelector('#phone').value;
-    const subject = document.querySelector('#project').value;
+    const phone = document.querySelector('#phone').value;
+    const project = document.querySelector('#project').value;
 
-    if (name === '' || email === '' || message === '' || subject === '') {
-        alert('Please fill all the fields!');
+    if (name === '' || email === '' || phone === '' || project === '') {
+        //alert('Please fill all the fields!');
     } else {
-        alert('Thank you for contacting us.');
+        setTimeout(() => {
+        }, 5000);
+        //alert('Thank you for contacting us.');
         document.querySelector('#name').value = '';
         document.querySelector('#email').value = '';
         document.querySelector('#phone').value = '';
