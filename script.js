@@ -37,30 +37,63 @@ window.onscroll = function () {
 }
 
 
+// //submit button
+// const submitButton = document.querySelector('.btn');
+
+// console.log(submitButton);
+
+// submitButton.addEventListener('click', function (event) {
+//     event.preventDefault();
+
+//     const name = document.querySelector('#name').value;
+//     console.log(name);
+//     const email = document.querySelector('#email').value;
+//     console.log(email);
+//     const message = document.querySelector('#phone').value;
+//     console.log(message);
+//     const subject = document.querySelector('#project').value;
+//     console.log(subject);
+
+//     if (name === '' || email === '' || message === '' || subject === '') {
+//         alert('Please fill all the fields!');
+//     } else {
+//         //  alert('Thank you for contacting us.');
+//         document.querySelector('#name').value = '';
+//         document.querySelector('#email').value = '';
+//         document.querySelector('#phone').value = '';
+//         document.querySelector('#project').value = '';
+
+//     }
+// });
+
 //submit button
 const submitButton = document.querySelector('.btn');
-
-console.log(submitButton);
+const messageBox = document.querySelector('#MessageBox');
 
 submitButton.addEventListener('click', function (event) {
     event.preventDefault();
 
     const name = document.querySelector('#name').value;
-    console.log(name);
     const email = document.querySelector('#email').value;
-    console.log(email);
-    const message = document.querySelector('#phone').value;
-    console.log(message);
+    const message = document.querySelector('#subject').value;
     const subject = document.querySelector('#project').value;
-    console.log(subject);
 
     if (name === '' || email === '' || message === '' || subject === '') {
-        alert('Please fill all the fields!');
+        showMessage('Please fill all the fields', 'error');
     } else {
+        showMessage('Thank you for contacting us', 'success');
         document.querySelector('#name').value = '';
         document.querySelector('#email').value = '';
-        document.querySelector('#phone').value = '';
+        document.querySelector('#subject').value = '';
         document.querySelector('#project').value = '';
 
     }
 });
+
+function showMessage(message, type) {
+    messageBox.innerHTML = `<span class="alert alert-${type}" role="alert">${message}</span>`;
+    // Clear message after a few seconds
+    setTimeout(() => {
+        messageBox.innerHTML = '';
+    }, 3000);
+}
