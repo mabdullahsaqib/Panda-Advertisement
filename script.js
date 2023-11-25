@@ -40,24 +40,18 @@ window.onscroll = function () {
 //submit button
 const submitButton = document.querySelector('.btn');
 
-console.log(submitButton);
-
 submitButton.addEventListener('click', function (event) {
     event.preventDefault();
 
     const name = document.querySelector('#name').value;
-    console.log(name);
     const email = document.querySelector('#email').value;
-    console.log(email);
     const message = document.querySelector('#phone').value;
-    console.log(message);
     const subject = document.querySelector('#project').value;
-    console.log(subject);
 
     if (name === '' || email === '' || message === '' || subject === '') {
-        //  alert('Please fill all the fields!');
+        //alert('Please fill all the fields!');
     } else {
-        //  alert('Thank you for contacting us.');
+        //alert('Thank you for contacting us.');
         document.querySelector('#name').value = '';
         document.querySelector('#email').value = '';
         document.querySelector('#phone').value = '';
