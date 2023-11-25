@@ -57,7 +57,6 @@ submitButton.addEventListener('click', function (event) {
     if (name === '' || email === '' || message === '' || subject === '') {
         alert('Please fill all the fields!');
     } else {
-        alert('Thank you for contacting us.');
         document.querySelector('#name').value = '';
         document.querySelector('#email').value = '';
         document.querySelector('#phone').value = '';
