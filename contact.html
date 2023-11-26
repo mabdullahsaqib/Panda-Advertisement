@@ -91,11 +91,13 @@
 
             <form class="in-touch" name="Panda-Clients" method="POST" data-netlify="true" id="submissionform" action="">
                <h3>Get in touch</h3>
+               <div class="alert">Form Submitted Successfully</div>
+
                <input type="text" class=" box form-control form-control-lg" id="name" name="name" placeholder="Name"
                   required>
                <input type="email" class="box form-control mt-3" id="email" name="email" placeholder="Email" required>
                <input type="text" class="box form-control mt-3" id="phone" name="phone" placeholder="Contact" required>
-               <textarea class="box form-control" rows="5" id="project" name="details" placeholder="Project Details"
+               <textarea class="box form-control" rows="5" id="details" name="details" placeholder="Project Details"
                   required></textarea>
                <button type="submit" class="link-btn btn-primary">
                   Let's get famous
@@ -125,6 +127,69 @@
 
    </section>
 </body>
+
+<script type="module">
+   // Import the functions you need from the SDKs you need
+   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
+   // TODO: Add SDKs for Firebase products that you want to use
+   // https://firebase.google.com/docs/web/setup#available-libraries
+
+   // Your web app's Firebase configuration
+   const firebaseConfig = {
+      apiKey: "AIzaSyCTIVk7spq_D8h2nUp7eUfFGgTMQSAOKmo",
+      authDomain: "panda-advertisements-lll.firebaseapp.com",
+      databaseURL: "https://panda-advertisements-lll-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "panda-advertisements-lll",
+      storageBucket: "panda-advertisements-lll.appspot.com",
+      messagingSenderId: "539386300064",
+      appId: "1:539386300064:web:5aa8a947cc150d5549abc5"
+   };
+
+   // Initialize Firebase
+   const app = initializeApp(firebaseConfig);
+
+   import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js";
+
+
+   //listen for submit event//(1)
+   document.getElementById('submissionform').addEventListener('submit', formSubmit);
+
+   //Submit form(2)
+   function formSubmit(e) {
+      e.preventDefault();
+      // Get Values from the DOM
+      let name = document.querySelector('#name').value;
+      let email = document.querySelector('#email').value;
+      let contact = document.querySelector('#phone').value;
+      let details = document.querySelector('#details').value;
+
+      //send message values(3)
+      sendMessage(name, email, contact, details);
+   }
+
+   //Send Message to Firebase(4)
+   function sendMessage(name, email, contact, details) {
+      const database = getDatabase();
+
+      set(ref(database, 'clients/' + Math.floor(Math.random() * 10000000)), {
+         name: name,
+         email: email,
+         contact: contact,
+         details: details
+      }).then(() => {
+         //Show Alert Message(5)
+         document.querySelector('.alert').style.display = 'block';
+         //Hide Alert Message After Seven Seconds(6)
+         setTimeout(function () {
+            document.querySelector('.alert').style.display = 'none';
+         }, 7000);
+         document.getElementById('submissionform').reset();
+      }).catch((error) => {
+         alert(error)
+      })
+   }
+</script>
+
 <!-- load javascript after loading all html content -->
 <script src="script.js"></script>
 

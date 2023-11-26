@@ -35,33 +35,3 @@ window.onscroll = function () {
         }
     }
 }
-
-//submit button
-const submitButton = document.getElementById('submissionform');
-
-console.log(submitButton);
-
-
-submitButton.addEventListener('submit', function (event) {
-    event.preventDefault();
-
-    const name = document.querySelector('#name').value;
-    const email = document.querySelector('#email').value;
-    const message = document.querySelector('#phone').value;
-    const subject = document.querySelector('#project').value;
-
-    if (name === '' || email === '' || message === '' || subject === '') {
-        showMessage('Please fill all the fields', 'error');
-    } else {
-        showMessage('Thank you for contacting us', 'success');
-        document.querySelector('#name').value = '';
-        document.querySelector('#email').value = '';
-        document.querySelector('#phone').value = '';
-        document.querySelector('#project').value = '';
-
-    }
-});
-
-function showMessage(message, type) {
-    alert(message);
-}
