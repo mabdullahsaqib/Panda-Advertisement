@@ -55,8 +55,7 @@ submitButton.addEventListener('click', function (event) {
     if (name === '' || email === '' || message === '' || subject === '') {
         showMessage('Please fill all the fields', 'error');
     } else {
-        setTimeout(() => {
-        }, 3000);
+        showMessage('Thank you for contacting us', 'success');
         document.querySelector('#name').value = '';
         document.querySelector('#email').value = '';
         document.querySelector('#subject').value = '';
@@ -67,9 +66,8 @@ submitButton.addEventListener('click', function (event) {
 
 function showMessage(message, type) {
 
-    if (type == 'error') {
-        alert(message);
-    }
+    alert(message);
     setTimeout(() => {
+
     }, 3000);
 }
