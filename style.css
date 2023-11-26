@@ -573,3 +573,16 @@ section {
   background: #512a10;
   color: #fff;
 }
+
+.alert {
+  padding: 1rem 2rem;
+  background: #512a10;
+  color: #fff;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: none;
+}
