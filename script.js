@@ -36,28 +36,40 @@ window.onscroll = function () {
     }
 }
 
-
 //submit button
 const submitButton = document.querySelector('.link-btn');
+const messageBox = document.querySelector('#MessageBox');
+
+console.log(submitButton);
+console.log(messageBox);
+
 
 submitButton.addEventListener('click', function (event) {
-
     event.preventDefault();
 
     const name = document.querySelector('#name').value;
     const email = document.querySelector('#email').value;
-    const phone = document.querySelector('#phone').value;
-    const project = document.querySelector('#project').value;
+    const message = document.querySelector('#subject').value;
+    const subject = document.querySelector('#project').value;
 
-    if (name === '' || email === '' || phone === '' || project === '') {
-        alert('Please fill all the fields!');
+    if (name === '' || email === '' || message === '' || subject === '') {
+        showMessage('Please fill all the fields', 'error');
     } else {
         setTimeout(() => {
-            alert('Thank you for contacting us.');
-        }, 5000);
+        }, 3000);
         document.querySelector('#name').value = '';
         document.querySelector('#email').value = '';
-        document.querySelector('#phone').value = '';
+        document.querySelector('#subject').value = '';
         document.querySelector('#project').value = '';
+
     }
 });
+
+function showMessage(message, type) {
+
+    if (type == 'error') {
+        alert(message);
+    }
+    setTimeout(() => {
+    }, 3000);
+}

@@ -6,9 +6,13 @@
    <link rel="icon" href="images/logo2.png">
    <title>CONTACT US</title>
 
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
    <link rel="stylesheet" href="style.css">
 
@@ -79,23 +83,25 @@
 
          <div class="get_in_touch">
 
-            <form name="Panda Clients" method="POST" data-netlify="true" class="in-touch" id="form" action=""
-               onsubmit="">
-               <h3>Get in touch</h3>
-               <input type="text" placeholder="Your Name" class="box" id="name" name="name" required>
-               <input type="email" placeholder="Email" class="box" id="email" name="email" required>
-               <input type="number" placeholder="Phone" class="box" id="phone" name="phone" required>
-               <textarea rows="10" placeholder="Message" class="box" id="project" name="project" required></textarea>
-               <button type="submit" class="link-btn btn ">
-                  Let's get famous
-               </button>
-            </form>
-
             <div class="maps">
                <iframe class="map w-100"
                   src="https://www.google.com/maps/embed/v1/place?q=FAST+NUCES+Lahore,+Milaad+Street,+Block+B+Faisal+Town,+Lahore,+Pakistan&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
                   width="600" height="450"></iframe>
             </div>
+
+            <form class="in-touch" name="Panda Clients" method="POST" data-netlify="true" action="">
+               <h3>Get in touch</h3>
+               <input type="text" class=" box form-control form-control-lg" id="name" name="name" placeholder="Name"
+                  required>
+               <input type="email" class="box form-control mt-3" id="email" name="email" placeholder="Email" required>
+               <input type="text" class="box form-control mt-3" id="subject" name="subject" placeholder="Subject"
+                  required>
+               <textarea class="box form-control" rows="5" id="project" name="details" placeholder="Project Details"
+                  required></textarea>
+               <button type="submit" class="link-btn btn-primary">
+                  Let's get famous
+               </button>
+
          </div>
 
       </div>
