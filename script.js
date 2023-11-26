@@ -37,19 +37,17 @@ window.onscroll = function () {
 }
 
 //submit button
-const submitButton = document.querySelector('.link-btn');
-const messageBox = document.querySelector('#MessageBox');
+const submitButton = document.getElementById('submissionform');
 
 console.log(submitButton);
-console.log(messageBox);
 
 
-submitButton.addEventListener('click', function (event) {
+submitButton.addEventListener('submit', function (event) {
     event.preventDefault();
 
     const name = document.querySelector('#name').value;
     const email = document.querySelector('#email').value;
-    const message = document.querySelector('#subject').value;
+    const message = document.querySelector('#phone').value;
     const subject = document.querySelector('#project').value;
 
     if (name === '' || email === '' || message === '' || subject === '') {
@@ -58,16 +56,12 @@ submitButton.addEventListener('click', function (event) {
         showMessage('Thank you for contacting us', 'success');
         document.querySelector('#name').value = '';
         document.querySelector('#email').value = '';
-        document.querySelector('#subject').value = '';
+        document.querySelector('#phone').value = '';
         document.querySelector('#project').value = '';
 
     }
 });
 
 function showMessage(message, type) {
-
     alert(message);
-    setTimeout(() => {
-
-    }, 3000);
 }
