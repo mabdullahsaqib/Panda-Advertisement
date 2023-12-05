@@ -485,7 +485,7 @@ section {
 }
 
 .newsletter {
-  background: linear-gradient(rgba(54, 22, 4, 0.7), rgba(52, 28, 5, 0.7)), url(../images/newsletter-bg.jpg) no-repeat;
+  background: linear-gradient(rgba(16, 6, 0, 0.904), rgb(4, 2, 0)), url(images/newsl.png) no-repeat;
   background-size: cover;
   background-position: center;
   text-align: center;
