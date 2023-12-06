@@ -221,6 +221,11 @@ section {
   background: #eee;
 }
 
+.menu .box-video {
+  margin-left: 40rem;
+  border-radius: .5rem;
+}
+
 .menu .box-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
